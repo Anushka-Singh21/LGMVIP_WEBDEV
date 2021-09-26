@@ -1,0 +1,613 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF_8">
+   <meta name="viewport" content="width=devise-width ,intial-scale=1.0">
+
+   <link rel="shortcut icon" href="data:image/jpeg;base64,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" type="image/png">
+
+<link rel="stylesheet" href="style.css">
+<script type="text/javascript" src="index.js"></script>
+<title>My Document</title>
+</head>
+
+
+<body>
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">ZIPPY</a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link active-link">HOME</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#projects" class="nav__link">PROJECTS</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#pricing" class="nav__link">PRICING</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#team" class="nav__link">TEAM</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#blog" class="nav__link">BLOG</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#contact" class="nav__link">CONTACT</a>
+                    </li>
+                </ul>
+
+               
+
+                <i class="ri-close-line nav__close" id="nav-close"></i>
+            </div>
+
+            <div class="nav__toggle" id="nav-toggle">
+                <i class="ri-function-line"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <!--==================== HOME ====================-->
+        <section class="home" id="home">
+               <img src="img/home2.jpg" alt="" class="home__img">
+
+                    <div class="home__container container grid">
+                        <div class="home__data">
+                            <h1 class="home__data-title">One page promising to  <br/><i>fill all your neends!</i></h1>
+                                <span class="home__data-subtitle">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis, vitae!<br/> Lorem, ipsum dolor sit amet consectetur adipisicing </span>
+                                <br/>
+                                <a href="#" class="button home__button">Know More</a>
+                                <a href="#" class="button home__button">Learn More</a>
+
+                        </div>
+
+                        <div class="home__social">
+                            <a href="https://www.facebook.com/" target="_blank" class="home__social-link">
+                                <i class="ri-facebook-box-fill"></i>
+                            </a>
+                            <a href="https://www.instagram.com/" target="_blank" class="home__social-link">
+                                <i class="ri-instagram-fill"></i>
+                            </a>
+                            <a href="https://twitter.com/" target="_blank" class="home__social-link">
+                                <i class="ri-twitter-fill"></i>
+                            </a>
+                        </div>
+                
+                    </div>
+        </section>
+          <!----==ABOUT==--> 
+          <section class="about section" id="about">
+              <h1 class="section__title heading">Welcome to ZIPPY</h1>
+              <div class="about__container container grid">
+                  <div class="about__data">
+                      <h2 class="section_title about__title">More information <br>About the best Sites</h2>
+                      <p class="about__description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                        Molestias voluptatum velit soluta possimus saepe consequuntur quidem tempora quo voluptatem temporibus! 
+                        Hic neque necessitatibus soluta iure dolorem quia velit magnam modi!
+                    </p>
+                    <a href="#" class="button">Know More</a>
+                  </div>
+
+                  <div class="about__img">
+                      <div class="about__img-overlay">
+                          <img src="img/um.jpg" alt="" class="about__img-one">
+
+                      </div>
+                  </div>
+              </div>
+              <br/><br/><br/>
+
+              <div class="grid-container about__info">
+                <div class="item1">
+                    <i class="ri-notification-3-fill know__icon center"></i><br/>
+                    <br/><br/>
+                    <h4 class="know__heading">LOREM IMSUM</h4>
+                    <p class="know__para">Lorem ipsum dolor sit, amet consectetur adipisicing elit.Cum enim officiis minus consequuntur labore. Magnam animi voluptates ipsa totam nemo delectus quo dolorum et nisi, explicabo eaque amet mollitia culpa.</p>
+                    <br/><br/>
+                    <a href="#" class="button know__btn">Learn More</a>
+
+                    </div>
+                    <div class="item2">
+                        <i class="ri-mail-fill know__icon"></i><br/>
+                        <br/><br/>
+                        <h4 class="know__heading">DOLOR SIT</h4>
+                        <p class="know__para">Lorem ipsum dolor sit,  amet consectetur , elit.Cum enim officiis minus consequuntur labore. Magnam animi voluptates ipsa totam nemo delectus quo dolorum et nisi, explicabo eaque amet mollitia culpa.</p>
+                        <br/><br/>
+                        <a href="#" class="button know__btn">Learn More</a>
+
+                    </div>
+                    <div class="item3">
+                        <i class="ri-archive-drawer-fill know__icon"></i><br/>
+                        <br/><br/>
+                        <h4 class="know__heading">CONSECTETUR</h4>
+                        <p class="know__para">Lorem ipsum dolor sit, amet consectetur aadipisicing Lorem ipsum dolor sitdipisicing elit.Cum enim officiis minus consequuntur labore. Magnam animi voluptates ipsa totam nemo delectus quo dolorum et nisi, explicabo eaque amet mollitia culpa.</p>
+                        <br/><br/>
+                        <a href="#" class="button know__btn">Learn More</a>
+                    </div>
+                
+                </div>
+            </section>
+
+            <!--Project-->
+            <section class="features" id="projects">
+            <h1 class="pro__heading">Projects</h1>
+            <div class="box-container">
+                <div class="box">
+                    <img src="img/proj1.png" alt="">
+                    <h3>Project Name</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam minus recusandae autem, repellendus fugit quaerat provident voluptatum non officiis ratione.</p>
+                        <a href="#" class="button pro__btn">See Project</a>
+                </div>
+                <div class="box">
+                    <img src="img/proj2.png" alt="">
+                    <h3>Project Name</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam minus recusandae autem, repellendus fugit quaerat provident voluptatum non officiis ratione.</p>
+                        <a href="#" class="button pro__btn">See Project</a>
+                </div>
+
+                <div class="box">
+                    <img src="img/proj1.png" alt="">
+                    <h3>Project Name</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam minus recusandae autem, repellendus fugit quaerat provident voluptatum non officiis ratione.</p>
+                        <a href="#" class="button pro__btn">See Project</a>
+                </div>
+
+                <div class="box">
+                    <img src="img/proj2.png" alt="">
+                    <h3>Project Name</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam minus recusandae autem, repellendus fugit quaerat provident voluptatum non officiis ratione.</p>
+                        <a href="#" class="button pro__btn">See Project</a>
+                </div>
+
+              
+            </div><br/><br/>
+            </section>
+
+            <!--Pricing-->
+            <section class="pricing section" id="pricing">
+                <br/><br/><br/><br/>
+                <h1 class="heading pricing__head"> Our Pricing Plans </h1>
+
+                <div class="box-container">
+
+                    <div class="box">
+                        <h3 class="title pricing__title">basic</h3>
+                        <div class="price">$10<span>/monthly</span></div>
+                        <ul>
+                            <li> <i class="ri-check-line p__icon"></i> 1000+ downloads </li>
+                            <li> <i class="ri-close-line px__icon" ></i> No transaction fees </li>
+                            <li> <i class="ri-check-line p__icon"></i>unlimited storage </li>
+                            <li> <i class="ri-check-line p__icon"></i> 5 downloads </li>
+                        </ul>
+                        <a href="#" class="button price__btn">Check Out</a>
+                    </div>
+
+                    <div class="box">
+                        <h3 class="title pricing__title">standard</h3>
+                        <div class="price">$15<span>/monthly</span></div>
+                        <ul>
+                            <li> <i class="ri-check-line p__icon"></i> 1000+ downloads </li>
+                            <li> <i class="ri-close-line px__icon"></i> No transaction fees </li>
+                            <li> <i class="ri-check-line p__icon"></i> unlimited storage </li>
+                            <li> <i class="ri-check-line p__icon"></i> 5 downloads </li>
+                        </ul>
+                        <a href="#" class="button price__btn">Check Out</a>
+                    </div>
+
+                    <div class="box">
+                        <h3 class="title pricing__title">premium</h3>
+                        <div class="price">$25<span>/monthly</span></div>
+                        <ul>
+                            <li> <i class="ri-check-line p__icon"></i> 1000+ downloads </li>
+                            <li> <i class="ri-close-line px__icon" ></i> No transaction fees </li>
+                            <li> <i class="ri-check-line p__icon"></i> unlimited storage </li>
+                            <li> <i class="ri-check-line p__icon"></i> 5 downloads </li>
+                        </ul>
+                        <a href="#" class="button price__btn">Check Out</a>
+                    </div>
+
+                </div>
+            </section>
+            
+            <!--VIDEO-->
+            <section class="video" id="video">
+                <br/><br/><br/><br/>
+                <h1 class="team__heading">Video Projects</h1>
+                <br/>
+                <div class="video__play">
+                    <div class="swiper-container mySwipervideo swiper__video">
+                        <div class="swiper-wrapper swiper-wrapper__video">
+                          <div class="swiper-slide swiper-slide__video">
+                    
+                            <ifame width="560" height="315" src="https://www.youtube.com/embed/8FwGSJWA_RQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></ifame>
+                </div>
+                <div class="swiper-slide swiper-slide__video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/-psusaPKLg0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  </div>
+                  <div class="swiper-slide swiper-slide__video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Tuw8hxrFBH8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  </div>
+                  <div class="swiper-slide swiper-slide__video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/4oN5JShOs2I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+                  </div>
+                  
+                </div>
+                <br/>
+                <br/>
+                <div class="swiper-pagination swiper-pagination__video"></div>
+            </div>
+            <br/><br/><br/>
+            
+        </div>
+            </section>
+
+                        <!--==================== TEAM ====================-->
+            
+                        <section class="team" id="team">
+                            <br/><br/><br/>
+                            <h1 class="team__heading">Zippy Team</h1>
+                            <div class="box-container">
+                               
+                                <div class="box">
+                                    <img class="team__img" src="img/team1.jpg" alt="">
+                                    <div class="middle"><h1 class="text">
+                                        <div class="home__social">
+                                            <a href="https://www.facebook.com/" target="_blank" class="home__social-link">
+                                                <i class="ri-facebook-box-fill team__icon"></i>
+                                            </a>
+                                            <a href="https://www.instagram.com/" target="_blank" class="home__social-link">
+                                                <i class="ri-instagram-fill team__icon"></i>
+                                            </a>
+                                            <a href="https://twitter.com/" target="_blank" class="home__social-link">
+                                                <i class="ri-twitter-fill team__icon"></i>
+                                            </a>
+                                        </div>
+                                    </h1></div>
+                                    <h3 class="pro__heading tn">Alonr Bohn</h3>
+                                    <p>Team Manager</p>
+                                    
+                                </div>
+                        
+                                <div class="box">
+                                    <img class="team__img" src="img/team2.jpg" alt="">
+                                    <div class="middle"><h1 class="text">
+                                        <div class="home__social">
+                                            <a href="https://www.facebook.com/" target="_blank" class="home__social-link">
+                                                <i class="ri-facebook-box-fill team__icon"></i>
+                                            </a>
+                                            <a href="https://www.instagram.com/" target="_blank" class="home__social-link">
+                                                <i class="ri-instagram-fill team__icon"></i>
+                                            </a>
+                                            <a href="https://twitter.com/" target="_blank" class="home__social-link">
+                                                <i class="ri-twitter-fill team__icon"></i>
+                                            </a>
+                                        </div>
+                                    </h1></div>
+                                    <h3 class="pro__heading tn">Piya Johb</h3>
+                                    <p>HR Manager</p>
+                                </div>
+                        
+                                <div class="box">
+                                    <img  class="team__img" src="img/team3.jpg" alt="">
+                                    <div class="middle"><h1 class="text">
+                                        <div class="home__social">
+                                            <a href="https://www.facebook.com/" target="_blank" class="home__social-link">
+                                                <i class="ri-facebook-box-fill team__icon"></i>
+                                            </a>
+                                            <a href="https://www.instagram.com/" target="_blank" class="home__social-link">
+                                                <i class="ri-instagram-fill team__icon"></i>
+                                            </a>
+                                            <a href="https://twitter.com/" target="_blank" class="home__social-link">
+                                                <i class="ri-twitter-fill team__icon"></i>
+                                            </a>
+                                        </div>
+                                    </h1></div>
+                                    <h3 class="pro__heading tn">John Paul</h3>
+                                    <p>Assistent</p>
+                                </div>
+                    
+                                <div class="box">
+                                    <img class="team__img" src="img/team5.jpg" alt="">
+                                    <div class="middle"><h1 class="text">
+                                        <div class="home__social">
+                                            <a href="https://www.facebook.com/" target="_blank" class="home__social-link">
+                                                <i class="ri-facebook-box-fill team__icon"></i>
+                                            </a>
+                                            <a href="https://www.instagram.com/" target="_blank" class="home__social-link">
+                                                <i class="ri-instagram-fill team__icon"></i>
+                                            </a>
+                                            <a href="https://twitter.com/" target="_blank" class="home__social-link">
+                                                <i class="ri-twitter-fill team__icon"></i>
+                                            </a>
+                                        </div>
+                                    </h1></div>
+                                    <h3 class="pro__heading tn">Rose Alon</h3>
+                                    <p>Lorem ipsum </p>
+                                </div>
+            
+                                <div class="box">
+                                    <img class="team__img" src="img/team4.jpg" alt="">
+                                    <div class="middle"><h1 class="text">
+                                        <div class="home__social">
+                                            <a href="https://www.facebook.com/" target="_blank" class="home__social-link">
+                                                <i class="ri-facebook-box-fill team__icon"></i>
+                                            </a>
+                                            <a href="https://www.instagram.com/" target="_blank" class="home__social-link">
+                                                <i class="ri-instagram-fill team__icon"></i>
+                                            </a>
+                                            <a href="https://twitter.com/" target="_blank" class="home__social-link">
+                                                <i class="ri-twitter-fill team__icon"></i>
+                                            </a>
+                                        </div>
+                                    </h1></div>
+                                    <h3 class="pro__heading tn">Bob Tresa</h3>
+                                    <p>Lorem ipsum </p>
+                                </div>
+            
+                                <div class="box">
+                                    <img class="team__img" src="img/team6.jpg" alt="">
+                                    <div class="middle"><h1 class="text">
+                                        <div class="home__social">
+                                            <a href="https://www.facebook.com/" target="_blank" class="home__social-link">
+                                                <i class="ri-facebook-box-fill team__icon"></i>
+                                            </a>
+                                            <a href="https://www.instagram.com/" target="_blank" class="home__social-link">
+                                                <i class="ri-instagram-fill team__icon"></i>
+                                            </a>
+                                            <a href="https://twitter.com/" target="_blank" class="home__social-link">
+                                                <i class="ri-twitter-fill team__icon"></i>
+                                            </a>
+                                        </div>
+                                    </h1></div>
+                                    <h3 class="pro__heading tn">Pouty Loun</h3>
+                                    <p>Lorem ipsum </p>
+                                </div>
+                        
+                            </div>
+                            <br/>
+                            <br/>
+                        
+                        </section>
+            
+                        <!--==================== Zippy Life ====================-->
+                        <section class="discover section" id="life">
+                            <h2 class="section__title life__heading">Life in Zippy</h2>
+            
+                            <!-- Swiper -->
+            
+                                <div class="swiper mySwiper2 life mylife2">
+                                <div class="swiper-wrapper life__wrapper">
+                                <div class="swiper-slide life__slide">
+                                    <img src="https://res.infoq.com/articles/who-is-on-the-team/en/headerimage/who-is-on-the-team-header-1612952290708.jpg" />
+                               
+                                    <img src="https://blogimage.vantagecircle.com/vcblogimages/2020/08/teamwork-and-team-building.png" />
+                               
+                                    <img src="https://www.eventer.cc/wp-content/uploads/2019/05/photo-team-success-event-eventer.png" />
+                              
+                                    <img src="https://2cbbiy1u7mibtte2j1dcwgul-wpengine.netdna-ssl.com/wp-content/uploads/2018/02/lumina-team-highlight-1.jpg" />
+                              
+                                    <img src="https://rismedia.com/wp-content/uploads/2019/10/teamwork_1017326208-1080x627.jpg" />
+                                
+                                   
+                                </div>
+                            </div>
+                          
+                                    
+                                            
+                               
+                        </section>
+            
+            
+            
+                        <!--==================== SUBSCRIBE ====================-->
+                         <section class="subscribe section">
+                            <div class="subscribe__bg">
+                                <div class="subscribe__container container">
+                                    <h2 class="section__title subscribe__title" >Subscribe Our <br> Newsletter</h2><br/>
+                                 <p class="subscribe__description">Subscribe to our newsletter and get a 
+                                        special 30% discount.
+                                    </p>
+                
+                                    <form action="" class="subscribe__form">
+                                        <input type="text" placeholder="Enter email" class="subscribe__input">
+                
+                                        <button class="button">
+                                            Subscribe
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </section>
+            
+                        
+            
+                        <!--==================== DISCOVER BLOG ====================-->
+                        <section class="discover section" id="blog">
+                            <h1 class="section__title">Blog</h1>
+                            
+                            <div class="discover__container container swiper-container">
+                                <div class="swiper-wrapper">
+                                    <!--==================== DISCOVER 1 ====================-->
+                                    <div class="discover__card swiper-slide">
+                                        <img src="img/discover1.jpg" alt="" class="discover__img">
+                                        <br/></br>
+                                        <h2 class="center">Lorem ipsum dolor <br/>sit amet consectetur</h2><br/>
+                                        <h4 class="center">Nov 2020</h4><br/>
+                                        <p class="center">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita ipsum voluptatem officiis maiores quae fuga neque consequatur, amet soluta autem?</p>
+                                        <br/><br/>
+                                        <a href="#" class="button blog__btn center">Read Blog</a>
+                                    
+                                    
+                                    </div>
+            
+                                    <!--==================== DISCOVER 2 ====================-->
+                                    <div class="discover__card swiper-slide">
+                                        <img src="img/discover3.jpg" alt="" class="discover__img">
+                                        <br/></br>
+                                        <h2 class="center">Lorem ipsum dolor</h2><br/>
+                                        <h4 class="center">Feb 2021</h4><br/>
+                                        <p class="center">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita ipsum voluptatem officiis maiores quae fuga neque consequatur, amet soluta autem?</p>
+                                        <br/><br/>
+                                        <a href="#" class="button blog__btn center">Read Blog</a>
+                                    </div>
+            
+                                    <!--==================== DISCOVER 3 ====================-->
+                                    <div class="discover__card swiper-slide">
+                                        <img src="img/discover2.jpg" alt="" class="discover__img">
+                                        <br/></br>
+                                        <h2 class="center">Lorem ipsum dolor <br/>sit consectetur</h2><br/>
+                                        <h4 class="center">Dec 2020</h4><br/>
+                                        <p class="center">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita ipsum voluptatem officiis maiores quae fuga neque consequatur, amet soluta autem?</p>
+                                        <br/><br/>
+                                        <a href="#" class="button blog__btn center">Read Blog</a>
+                                    </div>
+            
+                                    <!--==================== DISCOVER 4 ====================-->
+                                    <div class="discover__card swiper-slide">
+                                        <img src="img/discover4.jpg" alt="" class="discover__img">
+                                        <br/></br>
+                                        <h2 class="center">Lorem ipsum <br/>sit amet consectetur</h2><br/>
+                                        <h4 class="center">Jun 2021</h4><br/>
+                                        <p class="center"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita ipsum voluptatem officiis maiores quae fuga neque consequatur, amet soluta autem?</p>
+                                        <br/><br/>
+                                        <a href="#" class="button blog__btn center">Read Blog</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+            
+                        <section class="contact" id="contact">
+            
+                            <div class="image">
+                                <img src="img/map.gif" alt="map gif">
+                            </div>
+                        
+                            <form action="" class="cont">
+                        
+                                <h1 class="heading">Contact</h1>
+                        
+                                <div class="inputBox">
+                                    <input type="text" required>
+                                    <label>name</label>
+                                </div>
+                        
+                                <div class="inputBox">
+                                    <input type="email" required>
+                                    <label>email</label>
+                                </div>
+                        
+                                <div class="inputBox">
+                                    <input type="number" required>
+                                    <label>phone</label>
+                                </div>
+                                <br/> <br/>
+                                <div class="inputBox">
+                                    <textarea required name="" id="" cols="30" rows="10"></textarea>
+                                    <label>message</label>
+                                </div>
+                        
+                                <input type="submit" class="button contact__btn" value="send message">
+                        
+                            </form>
+                        
+                        </section>
+            
+                        
+                    </main>
+            
+                    <!--==================== FOOTER ====================-->
+                    <footer class="footer section">
+                        <div class="footer__container container grid">
+                            <div class="footer__content grid">
+                                <div class="footer__data">
+                                    <h3 class="footer__title">Zippy</h3>
+                                    <p class="footer__description">Lorem Ipsums hytrou dowiok<br> koutehb 
+                                       Lorem ipsum dolor sit amet dowiok
+                                    </p>
+                                    <div>
+                                        <a href="https://www.facebook.com/" target="_blank" class="footer__social">
+                                            <i class="ri-facebook-box-fill"></i>
+                                        </a>
+                                        <a href="https://twitter.com/" target="_blank" class="footer__social">
+                                            <i class="ri-twitter-fill"></i>
+                                        </a>
+                                        <a href="https://www.instagram.com/" target="_blank" class="footer__social">
+                                            <i class="ri-instagram-fill"></i>
+                                        </a>
+                                        <a href="https://www.youtube.com/" target="_blank" class="footer__social">
+                                            <i class="ri-youtube-fill"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                
+                                <div class="footer__data">
+                                    <h3 class="footer__subtitle">About</h3>
+                                    <ul>
+                                        <li class="footer__item">
+                                            <a href="" class="footer__link">About Us</a>
+                                        </li>
+                                        <li class="footer__item">
+                                            <a href="" class="footer__link">Features</a>
+                                        </li>
+                                        <li class="footer__item">
+                                            <a href="" class="footer__link">New & Blog</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                
+                                <div class="footer__data">
+                                    <h3 class="footer__subtitle">Company</h3>
+                                    <ul>
+                                        <li class="footer__item">
+                                            <a href="" class="footer__link">Team</a>
+                                        </li>
+                                        <li class="footer__item">
+                                            <a href="" class="footer__link">Plan y Pricing</a>
+                                        </li>
+                                        <li class="footer__item">
+                                            <a href="" class="footer__link">Become a member</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                
+                                <div class="footer__data">
+                                    <h3 class="footer__subtitle">Support</h3>
+                                    <ul>
+                                        <li class="footer__item">
+                                            <a href="" class="footer__link">FAQs</a>
+                                        </li>
+                                        <li class="footer__item">
+                                            <a href="" class="footer__link">Support Center</a>
+                                        </li>
+                                        <li class="footer__item">
+                                            <a href="" class="footer__link">Contact Us</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+            
+                            <div class="footer__rights">
+                                <p class="footer__copy">&#169;Priyanka</p>
+                                <div class="footer__terms">
+                                    <a href="#" class="footer__terms-link">Terms & Agreements</a>
+                                    <a href="#" class="footer__terms-link">Privacy Policy</a>
+                                </div>
+                            </div>
+                        </div>
+                    </footer>
+
+                           <!--========== SCROLL UP ==========-->
+        <a href="#" class="scrollup" id="scroll-up">
+            <i class="ri-arrow-up-line scrollup__icon"></i>
+        </a>
+
+
+        <!--=============== MAIN JS ===============-->
+        <script src="js/main.js"></script>
+    </main>
+</body>
+</html>
